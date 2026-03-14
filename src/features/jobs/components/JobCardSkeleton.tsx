@@ -3,7 +3,7 @@ export function JobCardSkeleton() {
     <div className="rounded-2xl p-5 bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border backdrop-blur-md animate-pulse">
       {/* Top row */}
       <div className="flex items-center gap-3 mb-4">
-        <div className="w-11 h-11 rounded-xl bg-light-elevated dark:bg-dark-elevated flex-shrink-0" />
+        <div className="w-11 h-11 rounded-xl bg-light-elevated dark:bg-dark-elevated shrink-0" />
         <div className="flex flex-col gap-2 flex-1">
           <div className="h-2.5 w-20 rounded-full bg-light-elevated dark:bg-dark-elevated" />
           <div className="h-3.5 w-40 rounded-full bg-light-elevated dark:bg-dark-elevated" />
