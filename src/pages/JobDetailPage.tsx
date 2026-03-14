@@ -81,18 +81,20 @@ export function JobDetailPage() {
               onApply={() => setApplied(true)}
               onSave={() => setSaved((p) => !p)}
             />
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
-              <div className="lg:col-span-2">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-10">
+              <div className="lg:col-span-2 order-2 lg:order-1">
                 <JobDetailContent job={job} />
               </div>
-              <div>
-                <JobDetailSidebar
-                  job={job}
-                  applied={applied}
-                  saved={saved}
-                  onApply={() => setApplied(true)}
-                  onSave={() => setSaved((p) => !p)}
-                />
+              <div className="order-1 lg:order-2">
+                <div className="lg:sticky lg:top-24">
+                  <JobDetailSidebar
+                    job={job}
+                    applied={applied}
+                    saved={saved}
+                    onApply={() => setApplied(true)}
+                    onSave={() => setSaved((p) => !p)}
+                  />
+                </div>
               </div>
             </div>
             <JobDetailCTA
