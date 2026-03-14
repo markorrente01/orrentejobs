@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand */
+  --color-brand-primary: hsla(214, 100%, 60%, 1);
+  --color-brand-secondary: hsla(214, 100%, 50%, 1);
+  --color-brand-glow: hsla(214, 100%, 60%, 0.15);
+
+  /* Dark mode backgrounds */
+  --color-dark-base: hsla(220, 25%, 6%, 1);
+  --color-dark-surface: hsla(220, 20%, 10%, 1);
+  --color-dark-elevated: hsla(220, 18%, 14%, 1);
+  --color-dark-glass: hsla(220, 20%, 100%, 0.04);
+  --color-dark-glass-hover: hsla(220, 20%, 100%, 0.07);
+  --color-dark-border: hsla(220, 20%, 100%, 0.08);
+  --color-dark-border-hover: hsla(220, 20%, 100%, 0.15);
+
+  /* Light mode backgrounds */
+  --color-light-base: hsla(210, 40%, 97%, 1);
+  --color-light-surface: hsla(0, 0%, 100%, 1);
+  --color-light-elevated: hsla(210, 40%, 95%, 1);
+  --color-light-glass: hsla(0, 0%, 100%, 0.6);
+  --color-light-glass-hover: hsla(0, 0%, 100%, 0.85);
+  --color-light-border: hsla(220, 20%, 0%, 0.08);
+  --color-light-border-hover: hsla(220, 20%, 0%, 0.15);
+
+  /* Typography - dark */
+  --color-dark-text-primary: hsla(0, 0%, 98%, 1);
+  --color-dark-text-secondary: hsla(220, 10%, 65%, 1);
+  --color-dark-text-muted: hsla(220, 10%, 45%, 1);
+
+  /* Typography - light */
+  --color-light-text-primary: hsla(220, 25%, 10%, 1);
+  --color-light-text-secondary: hsla(220, 10%, 40%, 1);
+  --color-light-text-muted: hsla(220, 10%, 60%, 1);
+
+  /* Semantic */
+  --color-success: hsla(142, 70%, 45%, 1);
+  --color-success-glass: hsla(142, 70%, 45%, 0.12);
+  --color-warning: hsla(38, 95%, 55%, 1);
+  --color-warning-glass: hsla(38, 95%, 55%, 0.12);
+  --color-error: hsla(0, 85%, 60%, 1);
+  --color-error-glass: hsla(0, 85%, 60%, 0.12);
+  --color-info: hsla(214, 100%, 60%, 1);
+  --color-info-glass: hsla(214, 100%, 60%, 0.12);
+
+  /* Fonts */
+  --font-display: "Syne", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+}
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-feature-settings: "rlig" 1, "calt" 1;
+    @apply transition-colors duration-300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+
+  ul {
+    @apply list-none;
+  }
+}
+
+@utility global-p {
+  @apply px-6 md:px-10 max-w-7xl mx-auto;
+}
+
+@utility glass-dark {
+  background: var(--color-dark-glass);
+  border: 1px solid var(--color-dark-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@utility glass-light {
+  background: var(--color-light-glass);
+  border: 1px solid var(--color-light-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+@utility glass-card {
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 16px;
+  transition: all 0.2s ease;
+}
