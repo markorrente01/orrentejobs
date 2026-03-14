@@ -5,10 +5,10 @@ import { JobCard } from "@/features/jobs/components/JobCard"
 import { JobFilters } from "@/features/jobs/components/JobFilters"
 import { Spinner } from "@/components/ui"
 import { useJobs } from "@/features/jobs"
-import type { JobFilters as JobFiltersType } from "@/features/jobs"
+import { type JobFilters as JobFiltersType } from "@/features/jobs"
 
 export function JobsPage() {
-  const [filters, setFilters] = useState<Partial<JobFiltersType>>({
+  const [filters, setFilters] = useState<Partial<typeof JobFiltersType>>({
     search: "",
     category: "All",
     type: "All",
