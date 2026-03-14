@@ -72,7 +72,7 @@ export function JobFilters({ filters, onChange, total }: JobFiltersProps) {
       {/* Category */}
       <div className="flex flex-col gap-2">
         <p className="text-xs font-medium uppercase tracking-widest text-light-text-muted dark:text-dark-text-muted">
-          Category
+          Department
         </p>
         <FilterPills
           options={CATEGORIES}
@@ -106,34 +106,35 @@ export function JobFilters({ filters, onChange, total }: JobFiltersProps) {
       </div>
 
       {/* Remote toggle */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between gap-4">
         <p className="text-xs font-medium uppercase tracking-widest text-light-text-muted dark:text-dark-text-muted">
-          Remote only
+            Remote only
         </p>
         <motion.button
-          whileTap={{ scale: 0.9 }}
-          onClick={() =>
+            whileTap={{ scale: 0.9 }}
+            onClick={() =>
             onChange({
-              ...filters,
-              remote: filters.remote === true ? null : true,
+                ...filters,
+                remote: filters.remote === true ? null : true,
             })
-          }
-          className={`
-            w-11 h-6 rounded-full border transition-all duration-200 relative cursor-pointer
+            }
+            className={`
+            relative shrink-0 w-11 h-6 rounded-full border 
+            transition-all duration-200 cursor-pointer
             ${
-              filters.remote === true
+                filters.remote === true
                 ? "bg-brand-primary border-brand-primary"
                 : "bg-light-glass dark:bg-dark-glass border-light-border dark:border-dark-border"
             }
-          `}
+            `}
         >
-          <motion.span
-            animate={{ x: filters.remote === true ? 20 : 2 }}
+            <motion.span
+            animate={{ x: filters.remote === true ? 24 : 2 }}
             transition={{ type: "spring", stiffness: 500, damping: 30 }}
-            className="absolute top-0.5 w-4 h-4 bg-white rounded-full shadow-sm"
-          />
+            className="absolute top-1/2 -translate-y-1/2 left-0 w-4 h-4 bg-white rounded-full shadow-sm"
+            />
         </motion.button>
-      </div>
+        </div>
 
       {/* Results count */}
       <p className="text-xs text-light-text-muted dark:text-dark-text-muted">
