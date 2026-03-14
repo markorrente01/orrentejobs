@@ -33,15 +33,17 @@ export function JobCard({ job, index = 0 }: JobCardProps) {
       transition={{ duration: 0.35, delay: index * 0.06, ease: "easeOut" }}
       whileHover={{ y: -4, scale: 1.005 }}
       onClick={() => navigate(`/jobs/${job.id}`)}
-      className="
+     className={`
         group cursor-pointer rounded-2xl p-5
         bg-light-glass dark:bg-dark-glass
-        border border-light-border dark:border-dark-border
-        backdrop-blur-md
-        hover:border-light-border-hover dark:hover:border-dark-border-hover
+        border backdrop-blur-md
         hover:bg-light-glass-hover dark:hover:bg-dark-glass-hover
         transition-all duration-200
-      "
+        ${job.featured
+            ? "border-brand-primary/30 dark:border-brand-primary/20 shadow-[0_0_0_1px_rgba(59,130,246,0.1)]"
+            : "border-light-border dark:border-dark-border hover:border-light-border-hover dark:hover:border-dark-border-hover"
+        }
+        `}
     >
       {/* Top row */}
       <div className="flex items-start justify-between mb-4">

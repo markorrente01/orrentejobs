@@ -2,12 +2,14 @@ import { useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
 import { Navbar } from "@/components/layout/Navbar"
 import { Button } from "@/components/ui"
+import { PageTransition } from "@/components/layout/PageTransition"
 
 export function NotFoundPage() {
   const navigate = useNavigate()
 
   return (
-    <div className="min-h-screen bg-light-base dark:bg-dark-base">
+    <PageTransition>
+      <div className="min-h-screen bg-light-base dark:bg-dark-base">
       <Navbar />
       <div className="global-p flex flex-col items-center justify-center min-h-[80vh] text-center gap-6">
         <motion.div
@@ -31,5 +33,6 @@ export function NotFoundPage() {
         </motion.div>
       </div>
     </div>
+    </PageTransition>
   )
 }

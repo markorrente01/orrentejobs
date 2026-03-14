@@ -8,6 +8,7 @@ import { JobDetailHero } from "@/features/jobs/components/JobDetailHero"
 import { JobDetailContent } from "@/features/jobs/components/JobDetailContent"
 import { JobDetailSidebar } from "@/features/jobs/components/JobDetailSidebar"
 import { JobDetailCTA } from "@/features/jobs/components/JobDetailCTA"
+import { PageTransition, Footer } from "@/components/layout"
 
 export function JobDetailPage() {
   const { id } = useParams<{ id: string }>()
@@ -17,7 +18,8 @@ export function JobDetailPage() {
   const [saved, setSaved] = useState(false)
 
   return (
-    <div className="min-h-screen bg-light-base dark:bg-dark-base">
+    <PageTransition>
+      <div className="min-h-screen bg-light-base dark:bg-dark-base">
       <Navbar />
 
       {/* Back button */}
@@ -101,6 +103,10 @@ export function JobDetailPage() {
           </div>
         )}
       </div>
+      <Footer/>
     </div>
+
+    </PageTransition>
+    
   )
 }

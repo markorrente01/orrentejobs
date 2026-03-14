@@ -3,9 +3,11 @@ import { motion } from "framer-motion"
 import { Navbar } from "@/components/layout/Navbar"
 import { JobCard } from "@/features/jobs/components/JobCard"
 import { JobFilters } from "@/features/jobs/components/JobFilters"
-import { Spinner } from "@/components/ui"
+import { EmptyState } from "@/components/ui"
 import { useJobs } from "@/features/jobs"
 import { type JobFilters as JobFiltersType } from "@/features/jobs"
+import { PageTransition, Footer, HeroGlow} from "@/components/layout"
+import { JobCardSkeleton } from "@/features/jobs/components/JobCardSkeleton"
 
 export function JobsPage() {
   const [filters, setFilters] = useState<Partial<typeof JobFiltersType>>({
@@ -19,11 +21,13 @@ export function JobsPage() {
   const { data, isLoading, isError } = useJobs(filters)
 
   return (
-    <div className="min-h-screen bg-light-base dark:bg-dark-base">
+    <PageTransition>
+      <div className="min-h-screen bg-light-base dark:bg-dark-base">
       <Navbar />
 
       {/* Hero */}
-      <section className="global-p pt-16 pb-12 border-b border-light-border dark:border-dark-border">
+      <section className="relative overflow-hidden global-p pt-16 pb-12 border-b border-light-border dark:border-dark-border">
+          <HeroGlow />
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,8 +64,10 @@ export function JobsPage() {
           {/* Job grid */}
           <div className="flex-1">
             {isLoading && (
-              <div className="flex items-center justify-center py-24">
-                <Spinner size="lg" />
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                {Array.from({ length: 6 }).map((_, i) => (
+                  <JobCardSkeleton key={i} />
+                ))}
               </div>
             )}
 
@@ -73,18 +79,24 @@ export function JobsPage() {
               </div>
             )}
 
-            {!isLoading && !isError && data?.jobs.length === 0 && (
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="flex flex-col items-center justify-center py-24 gap-3"
-              >
-                <p className="text-4xl">∅</p>
-                <p className="text-sm text-light-text-muted dark:text-dark-text-muted">
-                  No roles match your filters
-                </p>
-              </motion.div>
+           {!isLoading && !isError && data?.jobs.length === 0 && (
+              <EmptyState
+                title="No roles match your filters"
+                description="Try a different search term or adjust your filters."
+                action={{
+                  label: "Clear filters",
+                  onClick: () =>
+                    setFilters({
+                      search: "",
+                      category: "All",
+                      type: "All",
+                      level: "All",
+                      remote: null,
+                    }),
+                }}
+              />
             )}
+
 
             {!isLoading && !isError && data && data.jobs.length > 0 && (
               <motion.div
@@ -101,6 +113,9 @@ export function JobsPage() {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
+    </PageTransition>
+    
   )
 }
