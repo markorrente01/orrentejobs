@@ -24,7 +24,7 @@ export const MOCK_JOBS: Job[] = [
       "Contribute to and evolve our component design system",
     ],
     requirements: [
-      "5+ years of frontend development experience",
+      "3+ years of frontend development experience",
       "Strong expertise in React, TypeScript, and modern CSS",
       "Experience with design systems and component libraries",
       "Excellent communication and collaboration skills",
