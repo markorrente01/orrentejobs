@@ -14,7 +14,7 @@ export function JobDetailCTA({ job, applied, onApply }: JobDetailCTAProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: 0.3, ease: "easeOut" }}
-      className="mt-12 rounded-2xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border backdrop-blur-md"
+      className="mt-12 p-8 flex flex-col md:flex-row items-center justify-between gap-6 bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border backdrop-blur-md"
     >
       <div>
         <h3 className="font-display font-600 text-xl text-light-text-primary dark:text-dark-text-primary mb-1">

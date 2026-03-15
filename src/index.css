@@ -99,6 +99,5 @@
 @utility glass-card {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-radius: 16px;
   transition: all 0.2s ease;
 }

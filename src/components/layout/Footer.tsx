@@ -21,7 +21,7 @@ export function Footer() {
           {/* Brand */}
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2.5">
-              <div className="w-7 h-7 rounded-lg bg-brand-primary flex items-center justify-center">
+              <div className="w-7 h-7 rounded-md bg-brand-primary flex items-center justify-center">
                 <span className="text-white font-bold text-xs">OJ</span>
               </div>
               <span className="font-display font-700 text-base text-light-text-primary dark:text-dark-text-primary tracking-tight">

@@ -24,9 +24,9 @@ const variantStyles: Record<ButtonVariant, string> = {
 }
 
 const sizeStyles: Record<ButtonSize, string> = {
-  sm: "text-xs px-3 py-1.5 rounded-lg",
-  md: "text-sm px-5 py-2.5 rounded-xl",
-  lg: "text-base px-7 py-3.5 rounded-xl",
+  sm: "text-xs px-3 py-1.5",
+  md: "text-sm px-5 py-2.5",
+  lg: "text-base px-7 py-3.5",
 }
 
 export function Button({
@@ -57,7 +57,7 @@ export function Button({
       {...(props as any)}
     >
       {isLoading ? (
-        <span className="w-4 h-4 border-2 border-current border-t-transparent rounded-full animate-spin" />
+        <span className="w-4 h-4 border-2 border-current border-t-transparent animate-spin" />
       ) : (
         children
       )}

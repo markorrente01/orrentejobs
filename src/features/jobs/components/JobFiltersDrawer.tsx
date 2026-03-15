@@ -47,7 +47,7 @@ export function JobFiltersDrawer({
               <motion.button
                 whileTap={{ scale: 0.9 }}
                 onClick={onClose}
-                className="w-8 h-8 rounded-lg flex items-center justify-center bg-light-elevated dark:bg-dark-elevated text-light-text-secondary dark:text-dark-text-secondary cursor-pointer"
+                className="rounded-xl w-8 h-8 flex items-center justify-center bg-light-elevated dark:bg-dark-elevated text-light-text-secondary dark:text-dark-text-secondary cursor-pointer"
               >
                 <X width={14}/>
               </motion.button>

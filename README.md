@@ -1,4 +1,4 @@
-# OmniJobs
+# OrrenteJobs
 
 A modern job board demo built to showcase frontend architecture and engineering skills.
 

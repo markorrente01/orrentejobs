@@ -32,7 +32,7 @@ export function JobDetailSidebar({
       className="flex flex-col gap-4"
     >
       {/* About company */}
-      <div className="rounded-2xl p-5 bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border backdrop-blur-md">
+      <div className="p-5 bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border backdrop-blur-md">
         <h3 className="text-sm font-semibold text-light-text-primary dark:text-dark-text-primary mb-3">
           About {job.company}
         </h3>
@@ -42,7 +42,7 @@ export function JobDetailSidebar({
       </div>
 
       {/* Quick apply */}
-      <div className="rounded-2xl p-5 bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border backdrop-blur-md">
+      <div className="p-5 bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border backdrop-blur-md">
         <h3 className="font-display font-600 text-base text-light-text-primary dark:text-dark-text-primary mb-1">
           Ready to apply?
         </h3>
@@ -74,7 +74,7 @@ export function JobDetailSidebar({
         {STATS(job).map((s) => (
           <div
             key={s.label}
-            className="rounded-xl p-3 text-center bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border backdrop-blur-md"
+            className="p-3 text-center bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border backdrop-blur-md"
           >
             <p className="font-display font-600 text-xl text-light-text-primary dark:text-dark-text-primary">
               {s.value}

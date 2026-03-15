@@ -20,7 +20,6 @@ export function Card({
       whileHover={hover ? { y: -3, scale: 1.005 } : {}}
       transition={{ duration: 0.2 }}
       className={`
-        rounded-2xl
         bg-light-glass dark:bg-dark-glass
         border border-light-border dark:border-dark-border
         backdrop-blur-md

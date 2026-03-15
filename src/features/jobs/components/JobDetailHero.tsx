@@ -71,7 +71,7 @@ export function JobDetailHero({
         <div className="flex items-center gap-4">
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="w-16 h-16 rounded-2xl flex items-center justify-center text-sm font-bold shrink-0"
+            className="w-16 rounded-md h-16 flex items-center justify-center text-sm font-bold shrink-0"
             style={{
               background: `${job.companyColor}18`,
               border: `1px solid ${job.companyColor}35`,
@@ -116,7 +116,7 @@ export function JobDetailHero({
           meta.map((m) => (
             <div
               key={m.text}
-              className="flex items-center gap-2 bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border rounded-full px-4 py-1.5 text-sm text-light-text-secondary dark:text-dark-text-secondary"
+              className="flex rounded-md items-center gap-2 bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border px-4 py-1.5 text-sm text-light-text-secondary dark:text-dark-text-secondary"
             >
               {m.icon}
               {m.text}
@@ -127,7 +127,7 @@ export function JobDetailHero({
       {/* Tags */}
       <div className="flex flex-wrap gap-2">
         {job.tags.map((tag) => (
-          <Badge key={tag} variant="primary">
+          <Badge key={tag} variant="primary" className="rounded-md">
             {tag}
           </Badge>
         ))}

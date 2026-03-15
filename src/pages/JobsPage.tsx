@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
-import { Navbar, Footer, PageTransition, HeroGlow } from "@/components/layout"
+import { Navbar, Footer, PageTransition} from "@/components/layout"
 import { JobCard } from "@/features/jobs/components/JobCard"
 import { JobFilters } from "@/features/jobs/components/JobFilters"
 import { JobFiltersDrawer } from "@/features/jobs/components/JobFiltersDrawer"
@@ -30,7 +30,6 @@ export function JobsPage() {
 
         {/* Hero */}
         <section className="global-p pt-16 pb-12 border-b border-light-border dark:border-dark-border relative overflow-hidden">
-          <HeroGlow />
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -62,7 +61,7 @@ export function JobsPage() {
             <motion.button
               whileTap={{ scale: 0.95 }}
               onClick={() => setDrawerOpen(true)}
-              className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-xl bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border text-light-text-primary dark:text-dark-text-primary cursor-pointer"
+              className="flex items-center gap-2 text-sm font-medium px-4 py-2 bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border text-light-text-primary dark:text-dark-text-primary cursor-pointer"
             >
               <ListFilter size={14}/>
               Filters

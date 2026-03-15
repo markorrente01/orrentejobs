@@ -34,7 +34,7 @@ function FilterPills<T extends string>({ options, value, onChange }: FilterPills
           whileTap={{ scale: 0.95 }}
           onClick={() => onChange(option)}
           className={`
-            text-xs px-3.5 py-1.5 rounded-full border font-medium
+            text-xs px-3.5 py-1.5 border font-medium
             transition-all duration-150 cursor-pointer
             ${
               value === option

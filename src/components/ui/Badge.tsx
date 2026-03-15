@@ -37,7 +37,7 @@ export function Badge({
   return (
     <span
       className={`
-        inline-flex items-center px-2.5 py-1 rounded-full
+        inline-flex items-center px-2.5 py-1
         text-xs font-medium whitespace-nowrap
         ${variantStyles[variant]}
         ${className}

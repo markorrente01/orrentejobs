@@ -35,7 +35,7 @@ export function JobCard({ job, index = 0 }: JobCardProps) {
       whileHover={{ y: -2, scale: 1.005 }}
       onClick={() => navigate(`/jobs/${job.id}`)}
      className={`
-        group cursor-pointer rounded-2xl p-5
+        group cursor-pointer p-5
         bg-light-glass dark:bg-dark-glass
         border backdrop-blur-md
         hover:bg-light-glass-hover dark:hover:bg-dark-glass-hover
@@ -50,7 +50,7 @@ export function JobCard({ job, index = 0 }: JobCardProps) {
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
           <div
-            className="w-11 h-11 rounded-xl flex items-center justify-center text-xs font-bold shrink-0"
+            className="w-11 h-11 flex items-center justify-center text-xs font-bold shrink-0 rounded-md"
             style={{
               background: `${job.companyColor}18`,
               border: `1px solid ${job.companyColor}35`,
@@ -69,7 +69,7 @@ export function JobCard({ job, index = 0 }: JobCardProps) {
           </div>
         </div>
         {job.featured && (
-          <Badge variant="primary">Featured</Badge>
+          <Badge variant="primary" className="rounded-md">Featured</Badge>
         )}
       </div>
 
@@ -91,10 +91,10 @@ export function JobCard({ job, index = 0 }: JobCardProps) {
       {/* Tags */}
       <div className="flex flex-wrap gap-2 mb-4">
         {job.tags.slice(0, 3).map((tag) => (
-          <Badge key={tag} variant="default">{tag}</Badge>
+          <Badge key={tag} variant="default" className="rounded-md">{tag}</Badge>
         ))}
         {job.tags.length > 3 && (
-          <Badge variant="default">+{job.tags.length - 3}</Badge>
+          <Badge variant="default" className="rounded-md">+{job.tags.length - 3}</Badge>
         )}
       </div>
 
