@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { useTheme } from "@/context/ThemeContext"
 import { Button } from "@/components/ui"
+import { Menu, Moon, Sun, X } from "lucide-react"
 
 export function Navbar() {
   const { isDark, toggleTheme } = useTheme()
@@ -24,30 +25,27 @@ export function Navbar() {
           <Link to="/" className="flex items-center gap-2.5">
             <motion.div
               whileHover={{ scale: 1.05 }}
-              className="w-8 h-8 rounded-lg bg-brand-primary flex items-center justify-center"
+              className="w-8 h-8 rounded-md bg-brand-primary flex items-center justify-center"
             >
-              <span className="text-white font-bold text-sm">O</span>
+              <span className="text-white font-bold text-sm">OJ</span>
             </motion.div>
             <span className="font-display font-700 text-lg text-light-text-primary dark:text-dark-text-primary tracking-tight">
-              OmniJobs
+              OrrenteJobs
             </span>
           </Link>
 
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-6">
-            {[{ label: "Browse Jobs", path: "/" }].map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-sm font-medium transition-colors duration-200 ${
-                  isActive(link.path)
-                    ? "text-brand-primary"
-                    : "text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-primary dark:hover:text-dark-text-primary"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+           <Link
+              to='/'
+              className={`text-sm font-medium transition-colors duration-200 ${
+                isActive('/')
+                  ? "text-brand-primary"
+                  : "text-light-text-secondary dark:text-dark-text-secondary hover:text-light-text-primary dark:hover:text-dark-text-primary"
+              }`}
+            >
+              Browse Jobs
+            </Link>
           </div>
 
           {/* Right side */}
@@ -60,21 +58,9 @@ export function Navbar() {
               aria-label="Toggle theme"
             >
               {isDark ? (
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <circle cx="12" cy="12" r="5"/>
-                  <line x1="12" y1="1" x2="12" y2="3"/>
-                  <line x1="12" y1="21" x2="12" y2="23"/>
-                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-                  <line x1="1" y1="12" x2="3" y2="12"/>
-                  <line x1="21" y1="12" x2="23" y2="12"/>
-                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-                </svg>
+                <Sun size={15}/>
               ) : (
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-                </svg>
+                <Moon size={15}/>
               )}
             </motion.button>
 
@@ -92,9 +78,9 @@ export function Navbar() {
               aria-label="Toggle menu"
             >
               {menuOpen ? (
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                 <X size={15} />
               ) : (
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                <Menu size={15} />
               )}
             </motion.button>
           </div>

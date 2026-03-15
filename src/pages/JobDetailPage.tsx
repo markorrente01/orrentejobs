@@ -9,6 +9,7 @@ import { JobDetailContent } from "@/features/jobs/components/JobDetailContent"
 import { JobDetailSidebar } from "@/features/jobs/components/JobDetailSidebar"
 import { JobDetailCTA } from "@/features/jobs/components/JobDetailCTA"
 import { PageTransition, Footer } from "@/components/layout"
+import { ArrowLeft } from "lucide-react"
 
 export function JobDetailPage() {
   const { id } = useParams<{ id: string }>()
@@ -35,7 +36,7 @@ export function JobDetailPage() {
             onClick={() => navigate(-1)}
             className="gap-2 mb-8"
           >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+            <ArrowLeft size={14} />
             Back to jobs
           </Button>
         </motion.div>

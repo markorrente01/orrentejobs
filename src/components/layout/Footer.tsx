@@ -22,10 +22,10 @@ export function Footer() {
           <div className="flex flex-col gap-3">
             <div className="flex items-center gap-2.5">
               <div className="w-7 h-7 rounded-lg bg-brand-primary flex items-center justify-center">
-                <span className="text-white font-bold text-xs">O</span>
+                <span className="text-white font-bold text-xs">OJ</span>
               </div>
               <span className="font-display font-700 text-base text-light-text-primary dark:text-dark-text-primary tracking-tight">
-                OmniJobs
+                OrrenteJobs
               </span>
             </div>
             <p className="text-xs text-light-text-muted dark:text-dark-text-muted max-w-xs leading-relaxed">
@@ -50,7 +50,7 @@ export function Footer() {
         {/* Bottom bar */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-3 mt-10 pt-6 border-t border-light-border dark:border-dark-border">
           <p className="text-xs text-light-text-muted dark:text-dark-text-muted">
-            © 2025 OmniJobs. All rights reserved.
+            © 2025 OrrenteJobs. All rights reserved.
           </p>
           <p className="text-xs text-light-text-muted dark:text-dark-text-muted">
             Built with React · TypeScript · TailwindCSS · Framer Motion

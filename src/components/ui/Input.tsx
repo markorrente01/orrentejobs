@@ -1,10 +1,10 @@
-import { type InputHTMLAttributes, forwardRef } from "react"
+import { type InputHTMLAttributes, type ReactNode, forwardRef } from "react"
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: string
   error?: string
-  leftIcon?: React.ReactNode
-  rightIcon?: React.ReactNode
+  leftIcon?: ReactNode
+  rightIcon?: ReactNode
 }
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -18,7 +18,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
         <div className="relative flex items-center">
           {leftIcon && (
-            <span className="absolute left-3.5 text-light-text-muted dark:text-dark-text-muted">
+            <span className="z-10 absolute left-3.5 text-light-text-muted dark:text-dark-text-muted ">
               {leftIcon}
             </span>
           )}
@@ -40,7 +40,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             {...props}
           />
           {rightIcon && (
-            <span className="absolute right-3.5 text-light-text-muted dark:text-dark-text-muted">
+            <span className="z-10 absolute right-3.5 text-light-text-muted dark:text-dark-text-muted">
               {rightIcon}
             </span>
           )}

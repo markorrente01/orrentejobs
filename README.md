@@ -7,6 +7,7 @@ A modern job board demo built to showcase frontend architecture and engineering 
 - **React** + **TypeScript** — component-driven UI
 - **TailwindCSS v4** — utility-first styling with custom design tokens
 - **Framer Motion** — page transitions and micro-interactions
+- **Lucide react icons** - icons
 - **TanStack React Query** — async state management with simulated API layer
 - **React Router v6** — client-side routing
 

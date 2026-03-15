@@ -1,6 +1,7 @@
 import { motion } from "framer-motion"
 import type { Job } from "../types"
 import { Badge, Button } from "@/components/ui"
+import { Briefcase, Clock, DollarSign, MapPin } from "lucide-react"
 
 interface JobDetailHeroProps {
   job: Job
@@ -32,6 +33,32 @@ export function JobDetailHero({
   onApply,
   onSave,
 }: JobDetailHeroProps) {
+  const meta = [
+          {
+            icon: (
+              <MapPin size={16} />
+             ),
+            text: job.location,
+          },
+          {
+            icon: (
+              <Briefcase size={16}/>
+            ),
+            text: job.type,
+          },
+          {
+            icon: (
+              <DollarSign size={16}/>
+            ),
+            text: formatSalary(job.salary.min, job.salary.max, job.salary.currency),
+          },
+          {
+            icon: (
+              <Clock size={16}/>            
+            ),
+            text: `Posted ${timeAgo(job.postedAt)}`,
+          },
+  ]
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -85,39 +112,15 @@ export function JobDetailHero({
 
       {/* Meta pills */}
       <div className="flex flex-wrap gap-3 mb-6">
-        {[
-          {
-            icon: (
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            ),
-            text: job.location,
-          },
-          {
-            icon: (
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-            ),
-            text: job.type,
-          },
-          {
-            icon: (
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            ),
-            text: formatSalary(job.salary.min, job.salary.max, job.salary.currency),
-          },
-          {
-            icon: (
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            ),
-            text: `Posted ${timeAgo(job.postedAt)}`,
-          },
-        ].map((m) => (
-          <div
-            key={m.text}
-            className="flex items-center gap-2 bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border rounded-full px-4 py-1.5 text-sm text-light-text-secondary dark:text-dark-text-secondary"
-          >
-            {m.icon}
-            {m.text}
-          </div>
+        {
+          meta.map((m) => (
+            <div
+              key={m.text}
+              className="flex items-center gap-2 bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border rounded-full px-4 py-1.5 text-sm text-light-text-secondary dark:text-dark-text-secondary"
+            >
+              {m.icon}
+              {m.text}
+            </div>
         ))}
       </div>
 

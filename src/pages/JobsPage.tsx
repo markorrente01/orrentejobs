@@ -8,6 +8,7 @@ import { JobCardSkeleton } from "@/features/jobs/components/JobCardSkeleton"
 import { EmptyState } from "@/components/ui"
 import { useJobs } from "@/features/jobs"
 import { type JobFilters as JobFiltersType } from "@/features/jobs"
+import { ListFilter } from "lucide-react"
 
 const DEFAULT_FILTERS: Partial<typeof JobFiltersType> = {
   search: "",
@@ -63,14 +64,14 @@ export function JobsPage() {
               onClick={() => setDrawerOpen(true)}
               className="flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-xl bg-light-glass dark:bg-dark-glass border border-light-border dark:border-dark-border text-light-text-primary dark:text-dark-text-primary cursor-pointer"
             >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
+              <ListFilter size={14}/>
               Filters
             </motion.button>
           </div>
 
           <div className="flex flex-col lg:flex-row gap-8">
             {/* Desktop sidebar */}
-            <aside className="hidden lg:block lg:w-64 flex-shrink-0">
+            <aside className="hidden lg:block lg:w-64 shrink-0">
               <div className="sticky top-24">
                 <JobFilters
                   filters={filters}
@@ -84,7 +85,7 @@ export function JobsPage() {
             <div className="flex-1">
               {isLoading && (
                 <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
-                  {Array.from({ length: 6 }).map((_, i) => (
+                  {Array.from({ length: 8 }).map((_, i) => (
                     <JobCardSkeleton key={i} />
                   ))}
                 </div>

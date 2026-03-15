@@ -1,6 +1,7 @@
 import type { JobFilters as JobFiltersType, JobCategory, JobType, JobLevel } from "../types"
 import { Input } from "@/components/ui"
 import { motion } from "framer-motion"
+import { Search } from "lucide-react"
 
 interface JobFiltersProps {
   filters: Partial<JobFiltersType>
@@ -65,7 +66,7 @@ export function JobFilters({ filters, onChange, total }: JobFiltersProps) {
           onChange({ ...filters, search: e.target.value })
         }
         leftIcon={
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+          <Search size={15}/>
         }
       />
 

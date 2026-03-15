@@ -2,6 +2,7 @@ import { useNavigate } from "react-router-dom"
 import { motion } from "framer-motion"
 import type { Job } from "../types"
 import { Badge } from "@/components/ui"
+import { ArrowRight } from "lucide-react"
 
 interface JobCardProps {
   job: Job
@@ -31,7 +32,7 @@ export function JobCard({ job, index = 0 }: JobCardProps) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, delay: index * 0.06, ease: "easeOut" }}
-      whileHover={{ y: -4, scale: 1.005 }}
+      whileHover={{ y: -2, scale: 1.005 }}
       onClick={() => navigate(`/jobs/${job.id}`)}
      className={`
         group cursor-pointer rounded-2xl p-5
@@ -82,7 +83,7 @@ export function JobCard({ job, index = 0 }: JobCardProps) {
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
           {job.type}
         </span>
-        <span className="text-xs font-semibold text-light-text-primary dark:text-dark-text-primary">
+        <span className="text-xs font-semibold text-light-text-primary dark:text-dark-text-primary tracking-widest">
           {formatSalary(job.salary.min, job.salary.max, job.salary.currency)}
         </span>
       </div>
@@ -108,7 +109,7 @@ export function JobCard({ job, index = 0 }: JobCardProps) {
           className="text-xs font-medium text-brand-primary flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
         >
           View role
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <ArrowRight size={12}/>
         </motion.span>
       </div>
     </motion.div>

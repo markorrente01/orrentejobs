@@ -6,6 +6,6 @@ export const useJobs = (filters: Partial<JobFilters> = {}) => {
   return useQuery({
     queryKey: ["jobs", filters],
     queryFn: () => jobsActions.fetchJobs(filters),
-    staleTime: 1000 * 60 * 5,
+    staleTime: 1000 * 60 * 5, // 5 minutes
   })
 }

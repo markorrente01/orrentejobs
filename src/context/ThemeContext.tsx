@@ -15,18 +15,19 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
+const root = document.documentElement
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() => {
+  const getTheme = () => {
     const stored = localStorage.getItem("theme") as Theme | null
     if (stored) return stored
     return window.matchMedia("(prefers-color-scheme: dark)").matches
       ? "dark"
       : "light"
-  })
+  }
+  const [theme, setTheme] = useState<Theme>(getTheme)
 
   useEffect(() => {
-    const root = document.documentElement
     root.classList.remove("dark", "light")
     root.classList.add(theme)
     localStorage.setItem("theme", theme)

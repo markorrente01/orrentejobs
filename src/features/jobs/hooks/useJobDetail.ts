@@ -6,6 +6,6 @@ export const useJobDetail = (id: string) => {
     queryKey: ["job", id],
     queryFn: () => jobsActions.fetchJobById(id),
     enabled: !!id,
-    staleTime: 1000 * 60 * 5,
+    staleTime: 1000 * 60 * 10,
   })
 }
