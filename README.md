@@ -1,13 +1,19 @@
-# orrentejobs
+# OmniJobs
 
 A modern job board demo built to showcase frontend architecture and engineering skills.
+
+## Live Demo
+[https://orrentejobs.vercel.app](https://orrentejobs.vercel.app)
+
+## Repository
+[https://github.com/markorrente01/orrentejobs](https://github.com/markorrente01/orrentejobs)
 
 ## Tech Stack
 
 - **React** + **TypeScript** — component-driven UI
 - **TailwindCSS v4** — utility-first styling with custom design tokens
 - **Framer Motion** — page transitions and micro-interactions
-- **Lucide react icons** - icons
+- **Lucide React** — icons
 - **TanStack React Query** — async state management with simulated API layer
 - **React Router v6** — client-side routing
 
@@ -38,9 +44,9 @@ npm run dev
 
 ## Features
 
-- Job listing with real-time search and filtering
-- Job detail page with apply and save actions
-- Light and dark theme with system preference detection
+- Job listing with real-time search and filtering by department, type, level and remote
+- Job detail page with apply and save interactions
+- Light and dark theme with system preference detection and persistence
 - Skeleton loading states
 - Mobile-responsive with slide-out filter drawer
 - Animated page transitions
