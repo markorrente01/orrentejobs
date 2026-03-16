@@ -54,7 +54,7 @@ export function Navbar() {
             <motion.button
               whileTap={{ scale: 0.9 }}
               onClick={toggleTheme}
-              className="w-9 h-9 flex items-center rounded-lg justify-center bg-light-elevated dark:bg-dark-elevated border border-light-border dark:border-dark-border text-light-text-secondary dark:text-dark-text-secondary hover:border-light-border-hover dark:hover:border-dark-border-hover transition-all duration-200 cursor-pointer"
+              className="w-9 h-9 flex items-center justify-center bg-light-elevated dark:bg-dark-elevated border border-light-border dark:border-dark-border text-light-text-secondary dark:text-dark-text-secondary hover:border-light-border-hover dark:hover:border-dark-border-hover transition-all duration-200 cursor-pointer"
               aria-label="Toggle theme"
             >
               {isDark ? (
